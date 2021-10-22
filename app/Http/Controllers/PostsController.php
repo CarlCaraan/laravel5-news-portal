@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-//~Add class model
-use App\Post;
-
 use Illuminate\Http\Request;
 
 //~Add all categories request folder
 use App\Http\Requests\Posts\CreatePostsRequest;
+use App\Http\Requests\Posts\UpdatePostRequest;
+
+//~Add class model
+use App\Post;
+
+//~To Delete on Storage
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -48,7 +52,8 @@ class PostsController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'content' => $request->content,
-            'image' => $image
+            'image' => $image,
+            'published_at' => $request->published_at
         ]);
 
         //~Show Status Message
@@ -75,9 +80,10 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        //~Add update views
+        return view('posts.create')->with('post', $post);
     }
 
     /**
@@ -87,9 +93,29 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $data = $request->only(['title', 'description', 'published_at', 'content']);
+
+        //Check image
+        if($request->hasFile('image')) {
+            //Upload it
+            $image = $request->image->store('posts');
+
+            //Delete old one
+            Storage::delete($post->image);
+
+            $data['image'] = $image;
+        }
+
+        //Update attributes
+        $post->update($data);
+
+        //~Show Status Message
+        session()->flash('success', 'Post updated successfully.');
+
+        //~Refresh the page
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -100,6 +126,35 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //~Find the specific post with id
+        $post = Post::withTrashed()->where('id', $id)->firstOrFail();
+
+        //~Trash & permanent delete Function
+        if($post->trashed()) {
+            Storage::delete($post->image);
+            $post->forceDelete();
+        } else {
+            $post->delete();
+        }
+
+        //~Show Status Message
+        session()->flash('success', 'Post deleted successfully.');
+
+        //~Refresh the page
+        return redirect(route('posts.index'));
+    }
+
+    /**
+     * Display a list of all trashed posts.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    //~Add Trashed Method
+    public function trashed()
+    {
+        $trashed = Post::withTrashed()->get();
+
+        return view('posts.index')->with('posts', $trashed);
     }
 }

@@ -72,6 +72,7 @@ class CategoriesController extends Controller
      */
     public function edit(Category $category)
     {
+        //~Add update views
         return view('categories.create')->with('category', $category);
     }
 
