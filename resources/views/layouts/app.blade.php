@@ -80,6 +80,8 @@
         <main class="py-4">
             @auth
                 <div class="container">
+                    
+                    <!-- Display message success -->
                     @if(session()->has('success'))
                         <div class="alert alert-success">
                             {{ session()->get('success') }}
