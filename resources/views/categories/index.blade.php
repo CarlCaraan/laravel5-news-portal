@@ -23,6 +23,7 @@
 
             <thead>
                 <th>Name</th>
+                <th>Posts Count</th>
                 <th></th>
             </thead>
 
@@ -32,6 +33,9 @@
                     <tr>
                         <td>
                             {{ $category->name }}
+                        </td>
+                        <td>
+                            {{ $category->posts->count() }}
                         </td>
                         <td>
                             <!-- Edit Button -->
