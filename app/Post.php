@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 //~Add Soft Delete
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+//~Storage Facades
+use Illuminate\Support\Facades\Storage;
+
 class Post extends Model
 {
     //~Soft Delete

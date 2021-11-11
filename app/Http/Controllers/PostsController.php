@@ -15,6 +15,13 @@ use App\Category;
 
 class PostsController extends Controller
 {
+    //~Create constructor for middleware
+    public function __construct()
+    {
+        $this->middleware('VerifyCategoriesCount')->only(['create', 'store']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

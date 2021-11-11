@@ -80,11 +80,17 @@
         <main class="py-4">
             @auth
                 <div class="container">
-                    
+
                     <!-- Display message success -->
                     @if(session()->has('success'))
                         <div class="alert alert-success">
                             {{ session()->get('success') }}
+                        </div>
+                    @endif
+                    <!-- Display message error -->
+                    @if(session()->has('error'))
+                        <div class="alert alert-danger">
+                            {{ session()->get('error') }}
                         </div>
                     @endif
 
@@ -95,6 +101,10 @@
 
                                 <li class="list-group-item">
                                     <a href="{{ route('posts.index') }}">Posts</a>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <a href="{{ route('tags.index') }}">Tags</a>
                                 </li>
 
                                 <li class="list-group-item">
