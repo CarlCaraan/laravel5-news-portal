@@ -36,4 +36,18 @@ class Post extends Model
         //~Access category in the posts
         return $this->belongsTo(Category::class);
     }
+    
+    //~Add function that define a relationship post and a tag
+    public function tags() {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    //~Check if post has tags
+    /**
+     *
+     * @return bool
+     */
+    public function hasTag($tagId) {
+        return in_array($tagId, $this->tags->pluck('id')->toArray());
+    }
 }

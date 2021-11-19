@@ -55,21 +55,41 @@
                 <label for="category">Category</label>
                 <select class="form-control" name="category" id="category">
 
-                    <!-- Access category in the add category and database -->
-                    @foreach($categories as $category)
-                        <option value="{{ $category->id }}"
-                            @if(isset($post))
-                                @if($category->id == $post->category_id)
-                                    selected
-                                @endif
+                <!-- Access category in the add category and database -->
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}"
+                        @if(isset($post))
+                            @if($category->id == $post->category_id)
+                                selected
                             @endif
-                                >
-                            {{ $category->name }}
-                        </option>
-                    @endforeach
+                        @endif
+                    >
+                        {{ $category->name }}
+                    </option>
+                @endforeach
 
                 </select>
             </div>
+                
+            <!-- Access tags in the add post -->
+            @if($tags->count() > 0)
+            <div class="form-group">
+                <label for="tags">Tags</label>
+                <select name="tags[]" id="tags" class="form-control" multiple>'
+                    @foreach($tags as $tag)
+                        <option value="{{ $tag->id }}"
+                            @if(isset($post))
+                                @if($post->hasTag($tag->id))
+                                    selected
+                                @endif
+                            @endif
+                        >
+                            {{ $tag->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            @endif
 
             <div class="form-group">
                 <button type="submit" class="btn btn-success">

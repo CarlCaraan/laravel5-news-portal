@@ -11,6 +11,7 @@ use App\Http\Requests\Posts\UpdatePostRequest;
 //~Add class model
 use App\Post;
 use App\Category;
+use App\Tag;
 
 
 class PostsController extends Controller
@@ -40,7 +41,7 @@ class PostsController extends Controller
     public function create()
     {
         //~Link the add category on post category
-        return view('posts.create')->with('categories', Category::all());
+        return view('posts.create')->with('categories', Category::all())->with('tags', Tag::all());
     }
 
     /**
@@ -55,7 +56,7 @@ class PostsController extends Controller
         $image = $request->image->store('posts');
 
         //~Create data to database
-        Post::create([
+        $post = Post::create([
             'title' => $request->title,
             'description' => $request->description,
             'content' => $request->content,
@@ -63,6 +64,11 @@ class PostsController extends Controller
             'published_at' => $request->published_at,
             'category_id' => $request->category
         ]);
+
+        //~Show tags in post
+        if($request->tags) {
+            $post->tags()->attach($request->tags);
+        }
 
         //~Show Status Message
         session()->flash('success', 'Post created successfully.');
@@ -91,7 +97,7 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         //~Add update views onclick edit button
-        return view('posts.create')->with('post', $post)->with('categories', Category::all());
+        return view('posts.create')->with('post', $post)->with('categories', Category::all())->with('tags', Tag::all());
     }
 
     /**
@@ -105,18 +111,23 @@ class PostsController extends Controller
     {
         $data = $request->only(['title', 'description', 'published_at', 'content']);
 
-        //Check image
+        //~Check image
         if($request->hasFile('image')) {
-            //Upload it
+            //~Upload it
             $image = $request->image->store('posts');
 
-            //Delete old one
+            //~Delete old one
             $post->deleteImage();
 
             $data['image'] = $image;
         }
 
-        //Update attributes
+        //~Sync number of post in tags section
+        if($request->tags) {
+            $post->tags()->sync($request->tags);
+        }
+
+        //~Update attributes
         $post->update($data);
 
         //~Show Status Message

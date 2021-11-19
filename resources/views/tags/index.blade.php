@@ -35,7 +35,8 @@
                             {{ $tag->name }}
                         </td>
                         <td>
-                            0
+                            <!-- Display post count in tag -->
+                            {{ $tag->posts->count() }}
                         </td>
                         <td>
                             <!-- Edit Button -->
