@@ -106,7 +106,7 @@ class TagsController extends Controller
     public function destroy(Tag $tag)
     {
         //~Tags cannot be deleted because its associated to some posts
-        if($tag->count() > 0) {
+        if($tag->posts->count() > 0) {
             session()->flash('error', 'Tag cannot be deleted, because it is associated to some posts.');
             return redirect()->back();
         }
