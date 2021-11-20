@@ -23,6 +23,7 @@ class UpdatePostRequest extends FormRequest
      */
     public function rules()
     {
+        //~Validate data to database
         return [
             'title' => 'required',
             'description' => 'required',

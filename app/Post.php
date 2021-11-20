@@ -21,7 +21,6 @@ class Post extends Model
         'title', 'description', 'content', 'image', 'published_at', 'category_id'
     ];
 
-
     //~Add delete post image from storage
     /**
     *

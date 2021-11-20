@@ -96,6 +96,7 @@
 
                     <div class="row">
 
+                        <!-- Start Vertical Navigation -->
                         <div class="col-md-4">
                             <ul class="list-group">
 
@@ -119,11 +120,14 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- End Vertical Navigation -->
 
+                        <!-- Start Main Content -->
                         <div class="col-md-8">
                             <!-- Right table content -->
                             @yield('content')
                         </div>
+                        <!-- End Main Content -->
 
                     </div> <!-- End Row -->
 

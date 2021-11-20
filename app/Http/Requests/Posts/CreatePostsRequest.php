@@ -23,6 +23,7 @@ class CreatePostsRequest extends FormRequest
      */
     public function rules()
     {
+        //~Validate data to database
         return [
             'title' => 'required|unique:posts',
             'description' => 'required',
