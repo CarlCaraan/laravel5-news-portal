@@ -4,10 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-//~Add class models
-use App\Category;
-
-class VerifyCategoriesCount
+class VerifyIsAdmin
 {
     /**
      * Handle an incoming request.
@@ -18,13 +15,10 @@ class VerifyCategoriesCount
      */
     public function handle($request, Closure $next)
     {
-        //~If category is empty
-        if(Category::all()->count() === 0) {
-            session()->flash('error', 'You need to add categories to be able to create a post.');
-
-            return redirect(route('categories.create'));
+        //~Check if the user is admin
+        if(!auth()->user()->isAdmin()) {
+            return redirect()->route('home');
         }
-
         return $next($request);
     }
 }

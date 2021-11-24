@@ -17,17 +17,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//~ Add routes and middleware
 Route::middleware(['auth'])->group(function () {
-
     Route::get('/home', 'HomeController@index')->name('home');
-
     Route::resource('categories', 'CategoriesController');
-
     Route::resource('posts', 'PostsController')->middleware(['auth']);
-
     Route::resource('tags', 'TagsController');
-
     Route::get('trashed-posts', 'PostsController@trashed')->name('trashed-posts.index');
-
     Route:: put('restore-post/{post}', 'PostsController@restore')->name('restore-posts');
+});
+
+//~Add route to users
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('users', 'UsersController@index')->name('users.index');
 });

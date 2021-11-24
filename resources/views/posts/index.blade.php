@@ -27,11 +27,9 @@
                 <tbody>
                     @foreach($posts as $post)
                         <tr>
-
                             <td>
                                 <img src="{{ asset('/storage/' . $post->image) }}" width="120px" height="60" alt="" >
                             </td>
-
                             <td>
                                 {{ $post->title }}
                             </td>
@@ -41,7 +39,6 @@
                                     {{ $post->category->name }}
                                 </a>
                             </td>
-
                             <!-- Add restore button if not trashed -->
                             @if($post->trashed())
                                 <td>
@@ -51,14 +48,12 @@
                                         <button type="submit" class="btn btn-info btn-sm">Restore</button>
                                     </form>
                                 </td>
-
                             <!-- Add edit button if not trashed -->
                             @else
                                 <td>
                                     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info btn-sm">Edit</a>
                                 </td>
                             @endif
-
                             <td>
                                 <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                     @csrf
@@ -68,7 +63,6 @@
                                     </button>
                                 </form>
                             </td>
-
                         </tr>
                     @endforeach
                 </tbody>
