@@ -224,6 +224,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // ~Add class of gravatar
+        'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class
+
     ],
 
 ];
