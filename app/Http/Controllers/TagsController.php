@@ -7,7 +7,7 @@ use App\Tag;
 
 use Illuminate\Http\Request;
 
-//~Add all Tags request folder
+//~Add all Tags request 
 use App\Http\Requests\Tags\CreateTagRequest;
 use App\Http\Requests\Tags\UpdateTagsRequest;
 
