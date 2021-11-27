@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ~Add Welcome Controller Route
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
