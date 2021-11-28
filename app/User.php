@@ -41,4 +41,9 @@ class User extends Authenticatable
     public function isAdmin() {
         return $this->role == 'admin';
     }
+
+    //~User has a many post
+    public function posts() {
+        return $this->hasMany(Post::class);
+    }
 }

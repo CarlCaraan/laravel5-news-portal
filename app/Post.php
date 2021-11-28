@@ -18,7 +18,7 @@ class Post extends Model
 
     //~Protect Data
     protected $fillable = [
-        'title', 'description', 'content', 'image', 'published_at', 'category_id'
+        'title', 'description', 'content', 'image', 'published_at', 'category_id', 'user_id'
     ];
 
     //~Add delete post image from storage
@@ -48,5 +48,10 @@ class Post extends Model
      */
     public function hasTag($tagId) {
         return in_array($tagId, $this->tags->pluck('id')->toArray());
+    }
+
+    // ~Check who post the posts
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 }

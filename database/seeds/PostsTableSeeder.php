@@ -6,6 +6,9 @@ use App\Tag;
 
 use Illuminate\Database\Seeder;
 
+// ~Add to hash password
+use Illuminate\Support\Facades\Hash;
+
 class PostsTableSeeder extends Seeder
 {
     /**
@@ -16,52 +19,49 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         // ~Add dummy category data here
+        $author1 = App\User::create([
+            'name' => 'Cindy Carolino',
+            'email' => 'cindy@gmail.com',
+            'password' => Hash::make('password')
+        ]);
+
+        $author2 = App\User::create([
+            'name' => 'Tony Carolino',
+            'email' => 'tony@doe.com',
+            'password' => Hash::make('password')
+        ]);
+
         $category1 = Category::create([
             'name' => 'News'
         ]);
+
         $category2 = Category::create([
             'name' => 'Marketing'
         ]);
         $category3 = Category::create([
-            'name' => 'Partnership'
+            'name' => 'Business'
         ]);
 
         // ~Add dummy post data here
-        $post1 = Post::create([
-            'title' => 'News 1 Title',
-            'description' => 'News 1 Description',
+        $post1 = $author1->posts()->create([
+            'title' => 'PAALALA BAGO MAGPABAKUNA LABAN SA COVID-19',
+            'description' => 'Resbakuna',
             'content' => 'News 1 Content',
             'category_id' => $category1->id,
             'image' => 'posts/1.jpg'
         ]);
-        $post2 = Post::create([
-            'title' => 'News 2 Title',
-            'description' => 'News 2 Description',
-            'content' => 'News 2 Content',
-            'category_id' => $category2->id,
-            'image' => 'posts/2.jpg'
-        ]);
-        $post3 = Post::create([
-            'title' => 'News 3 Title',
-            'description' => 'News 3 Description',
-            'content' => 'News 3 Content',
-            'category_id' => $category3->id,
-            'image' => 'posts/3.jpg'
-        ]);
 
         // ~Add dummy tag data here
         $tag1 = Tag::create([
-            'name' => 'job'
+            'name' => 'Events'
         ]);
         $tag2 = Tag::create([
-            'name' => 'customers'
+            'name' => 'Covid'
         ]);
         $tag3 = Tag::create([
-            'name' => 'record'
+            'name' => 'Seminar'
         ]);
 
         $post1->tags()->attach([$tag1->id, $tag2->id]);
-        $post2->tags()->attach([$tag2->id, $tag3->id]);
-        $post3->tags()->attach([$tag1->id, $tag3->id]);
     }
 }
