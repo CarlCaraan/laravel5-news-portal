@@ -30,8 +30,8 @@
 			<div class="navbar-left">
 				<button class="navbar-toggler" type="button">&#9776;</button>
 				<a class="navbar-brand" href="{{ route('welcome') }}">
-					<img class="logo-dark" src="{{ asset('img/logo-dark.png') }}" alt="logo">
-					<img class="logo-light" src="{{ asset('img/logo-light.png') }}" alt="logo">
+					<img class="mx-1" src="{{ asset('img/favicon.png') }}" width="40px" alt=""><h6 class="logo-dark text-dark text-bold m-0 p-0">Santa Maria Laguna</h6>
+					<h6 class="logo-light text-white m-0 p-0">Santa Maria Laguna</h6>
 				</a>
 			</div>
 
@@ -39,13 +39,16 @@
 				<span class="navbar-divider d-mobile-none"></span>
 
 				<ul class="nav nav-navbar">
-
+					<li>
+						<a class="logo-dark text-dark"href="{{ route('welcome') }}">Home</a>
+						<a class="logo-white text-white"href="{{ route('welcome') }}">Home</a>
+					</li>
 
 				</ul>
 
 			</section>
 
-			<a class="btn btn-xs btn-round btn-success" href="{{ route('login') }}">Log In</a>
+			<a class="btn btn-xs btn-rounded btn-secondary" href="{{ route('login') }}">Log In</a>
 
 		</div>
 	</nav><!-- /.navbar -->
@@ -69,7 +72,7 @@
 			<div class="row gap-y align-items-center">
 
 				<div class="col-6 col-lg-3">
-					<a href="#"><img src="{{ asset('img/logo-dark.png') }}" alt="logo"></a>
+					<h6 class="logo-dark text dark">Santa Maria Laguna</h6>
 				</div>
 
 				<div class="col-6 col-lg-3 text-right order-lg-last">
