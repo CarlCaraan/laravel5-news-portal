@@ -30,7 +30,7 @@
 			<div class="navbar-left">
 				<button class="navbar-toggler" type="button">&#9776;</button>
 				<a class="navbar-brand" href="{{ route('welcome') }}">
-					<img class="mx-1" src="{{ asset('img/favicon.png') }}" width="40px" alt=""><h6 class="logo-dark text-dark text-bold m-0 p-0">Santa Maria Laguna</h6>
+						<img class="mx-2" src="{{ asset('img/favicon.png') }}" width="40px" alt=""><h6 class="logo-dark text-dark text-bold m-0 p-0">Santa Maria Laguna</h6>
 					<h6 class="logo-light text-white m-0 p-0">Santa Maria Laguna</h6>
 				</a>
 			</div>
