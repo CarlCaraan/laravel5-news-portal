@@ -385,6 +385,9 @@
         text-align: center;
         align-items: center;
     }
+    #matrix_text {
+        margin-left: 3rem;
+    }
 }
 
 /* Devices under 768px (md) */
@@ -398,9 +401,6 @@
 @media (max-width: 575px) {
     .login_headings {
         font-size: 2.6rem;
-    }
-    #matrix_text {
-        margin-left: 3rem;
     }
 }
 
