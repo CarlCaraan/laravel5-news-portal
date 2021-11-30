@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    @yield('title')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -70,10 +70,10 @@
                                     <a class="nav-link text-white <?php if($page == "register"){echo "active";} ?>" id="nav_login" href="{{ route('register') }}"><h5>{{ __('Register') }}</h5></a>
                                 </li>
                             @endif
-                        @else
+                            @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <span id="nav_admin">{{ Auth::user()->name }} <span class="caret"></span></span>
                                 </a>
                                 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -104,17 +104,17 @@
         
         <main class="py-4">
             @auth
-                <div class="container">
+                <div class="container py-5 mt-5">
 
                     <!-- Display message success -->
                     @if(session()->has('success'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-success mx-3">
                             {{ session()->get('success') }}
                         </div>
                     @endif
                     <!-- Display message error -->
                     @if(session()->has('error'))
-                        <div class="alert alert-danger">
+                        <div class="alert alert-danger mx-3">
                             {{ session()->get('error') }}
                         </div>
                     @endif
@@ -128,29 +128,27 @@
                                 <!-- Show users list for only admin users -->
                                 @if(auth()->user()->isAdmin())
                                     <li class="list-group-item">
-                                        <a href="{{ route('users.index') }}">
-                                            Users
-                                        </a>
+                                        <a href="{{ route('users.index') }}"><i class="fas fa-users"></i> Users</a>
                                     </li>
                                 @endif
 
                                 <li class="list-group-item">
-                                    <a href="{{ route('posts.index') }}">Posts</a>
+                                    <a href="{{ route('posts.index') }}"><i class="fas fa-newspaper"></i> Posts</a>
                                 </li>
 
                                 <li class="list-group-item">
-                                    <a href="{{ route('tags.index') }}">Tags</a>
+                                    <a href="{{ route('tags.index') }}"><i class="fas fa-tags"></i> Tags</a>
                                 </li>
 
                                 <li class="list-group-item">
-                                    <a href="{{ route('categories.index') }}">Categories</a>
+                                    <a href="{{ route('categories.index') }}"><i class="fas fa-tag"></i> Categories</a>
                                 </li>
 
                             </ul>
 
                             <ul class="list-group mt-5">
                                 <li class="list-group-item">
-                                    <a href="{{ route('trashed-posts.index') }}">Trashed Posts</a>
+                                    <a href="{{ route('trashed-posts.index') }}"><i class="fas fa-trash-alt"></i> Trashed Posts</a>
                                 </li>
                             </ul>
                         </div>
@@ -176,7 +174,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/typed.min.js') }}"></script>
     <script src="https://kit.fontawesome.com/fbaf02a1c1.js" crossorigin="anonymous"></script>
 	<script src="{{ asset('js/custom.js') }}"></script>

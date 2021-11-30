@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title>Register | Sta. Maria Laguna</title>
+@endsection
+
 @section('background')
 <!--- Start Landing Page Image -->
     <div class="home-inner" id="login_background">

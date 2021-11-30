@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('background')
+<!--- Start Landing Page Image -->
+    <div class="home-inner" id="admin_background">
+    </div>
+<!--- End Landing Page Image -->
+@endsection
+
 @section('content')
 <div class="card card-default">
     <div class="card-header">Users</div>
@@ -8,7 +15,7 @@
 
         <!-- Start Display the posts -->
         @if($users->count() > 0 )
-            <table class="table">
+            <table class="table table-responsive">
                 <thead>
                     <th>Image</th>
                     <th>Name</th>

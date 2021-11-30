@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('background')
+<!--- Start Landing Page Image -->
+    <div class="home-inner" id="admin_background">
+    </div>
+<!--- End Landing Page Image -->
+@endsection
+
 @section('content')
 
 <div class="d-flex justify-content-end mb-2">
