@@ -15,6 +15,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/fixed.css') }}" rel="stylesheet">
 
     <style>
         .btn-info {
@@ -26,13 +28,21 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top" id="login_navigation">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand text-white" href="{{ url('/') }}">
+                    <div class="row">
+                        <div class="col px-0">
+                            <img class="mx-2" src="{{ asset('img/favicon.png') }}" width="50px" alt="">
+                        </div>
+                        <div class="col px-0">
+                            <h5 class="pt-1 m-0"><strong>STA. MARIA, LAGUNA</strong></h5>
+                            <div class="p-0 m-0" id="news_typings"></div>
+                        </div>
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -46,11 +56,14 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-white <?php if($page == "login"){echo "active";} ?>" id="nav_login" href="{{ route('login') }}"><h5>{{ __('Login') }}</h5></a>
                             </li>
+
+                            <h4 class="text-white mt-1" id="nav_divider">|</h4>
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white <?php if($page == "register"){echo "active";} ?>" id="nav_login" href="{{ route('register') }}"><h5>{{ __('Register') }}</h5></a>
                                 </li>
                             @endif
                         @else
@@ -81,6 +94,10 @@
             </div>
         </nav>
 
+        <!-- Start Background Image -->
+        @yield('background')
+        <!-- End Background Image -->
+        
         <main class="py-4">
             @auth
                 <div class="container">
@@ -155,6 +172,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/typed.min.js') }}"></script>
+    <script src="https://kit.fontawesome.com/fbaf02a1c1.js" crossorigin="anonymous"></script>
+	<script src="{{ asset('js/custom.js') }}"></script>
 
     @yield('scripts')
 
