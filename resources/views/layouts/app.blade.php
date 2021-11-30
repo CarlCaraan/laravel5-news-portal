@@ -18,6 +18,10 @@
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/fixed.css') }}" rel="stylesheet">
 
+    <!-- Favicons -->
+	<link rel="icon" href="{{ asset('img/favicon.png') }}">
+
+
     <style>
         .btn-info {
             color: #fff;

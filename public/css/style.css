@@ -161,11 +161,11 @@
     box-shadow: none;
 }
 #nav_login:hover {
-    color: #45a19e !important;
-    transition: color 0.2s ease;
+    color: #66FCF1!important;
+    transition: all .3s ease-in;
 }
 .nav-link.active {
-    color: #45a19e !important;
+    color: #66FCF1!important;
 }
 .navbar.solid {
     background: rgba(48, 60, 76, 0.9) !important;
@@ -313,6 +313,9 @@
 #matrix_left {
     position: absolute;
 }
+#matrix_text {
+    margin-left: 3.6rem;
+}
 #icon-facebook,
 #icon-twitter,
 #icon-instagram {
@@ -395,6 +398,9 @@
 @media (max-width: 575px) {
     .login_headings {
         font-size: 2.6rem;
+    }
+    #matrix_text {
+        margin-left: 3rem;
     }
 }
 
