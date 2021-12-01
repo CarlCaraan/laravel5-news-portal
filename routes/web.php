@@ -18,6 +18,11 @@ Route::get('/', 'WelcomeController@index')->name('welcome');
 // ~Add Welcome Controller Route
 Route::get('blog/posts/{post}', [PostsController::class, 'show'])->name('blog.show');
 
+// Click category filter route
+Route::get('blog/categories/{category}', [PostsController::class, 'category'])->name('blog.category');
+// Click tag filter route
+Route::get('blog/tags/{tag}', [PostsController::class, 'tag'])->name('blog.tag');
+
 Auth::routes();
 
 //~ Add routes and middleware

@@ -10,9 +10,8 @@ use App\Http\Requests\Posts\UpdatePostRequest;
 
 //~Add class model
 use App\Post;
-use App\Category;
 use App\Tag;
-
+use App\Category;
 
 class PostsController extends Controller
 {

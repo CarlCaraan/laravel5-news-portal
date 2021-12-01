@@ -1,7 +1,7 @@
 @extends('layouts.blog')
 
 @section('title')
-Santa Maria Laguna
+{{ $category->name }} | Santa Maria Laguna
 @endsection
 
 @section('header')
@@ -11,7 +11,7 @@ Santa Maria Laguna
 		<div class="row">
 			<div class="col-md-8 mx-auto">
 
-				<h1>Welcome to Municipality of Santa Maria Laguna</h1>
+				<h1>{{ $category->name }}</h1>
 				<p class="lead-2 opacity-90 mt-6">Read and get updated on news and events.</p>
 
 			</div>
@@ -66,7 +66,7 @@ Santa Maria Laguna
 
 
 
-				@include('partials.sidebar')
+                @include('partials.sidebar')
 
 			</div>
 		</div>
