@@ -11,13 +11,13 @@
 
 <div class="d-flex justify-content-end mb-2">
     <!-- Add button -->
-    <a href="{{ route('tags.create') }}" class="btn btn-success">
-        Add Tag
+    <a href="{{ route('tags.create') }}" class="btn text-white" id="admin_add_btn">
+        ADD TAG
     </a>
 </div>
 
-<div class="card card-default">
-    <div class="card-header">
+<div class="card card-default" id="admin_card">
+    <div class="card-header text-white" id="admin_card_heading">
         Tags
     </div>
 
@@ -26,11 +26,11 @@
 
         @if($tags->count() > 0)
             <!-- Start table -->
-            <table class="table">
+            <table class="table text-white" id="admin_table">
 
             <thead>
                 <th>Name</th>
-                <th>Posts Count</th>
+                <th class="center">Posts Count</th>
                 <th></th>
             </thead>
 
@@ -41,18 +41,18 @@
                         <td>
                             {{ $tag->name }}
                         </td>
-                        <td>
+                        <td class="center">
                             <!-- Display post count in tag -->
                             {{ $tag->posts->count() }}
                         </td>
-                        <td>
+                        <td align="right">
                             <!-- Edit Button -->
-                            <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-info btn-sm">
+                            <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm text-white" id="edit_restore_btn">
                                 Edit
                             </a>
 
                             <!-- Delete button -->
-                            <button class="btn btn-danger btn-sm" onclick="handleDelete({{ $tag->id }})">Delete</button>
+                            <button class="btn btn-sm text-white" id="trash_delete_btn" onclick="handleDelete({{ $tag->id }})">Delete</button>
                         </td>
                     </tr>
                 @endforeach

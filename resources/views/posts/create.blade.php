@@ -99,7 +99,7 @@
             @endif
 
             <div class="form-group">
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn text-white float-right" id="admin_add_btn">
                     {{ isset($post) ? 'Update Post' : 'Create Post' }}
                 </button>
             </div>

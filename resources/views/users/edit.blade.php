@@ -8,8 +8,8 @@
 @endsection
 
 @section('content')
-<div class="card">
-    <div class="card-header">My Profile</div>
+<div class="card text-white" id="admin_card">
+    <div class="card-header text-white" id="admin_card_heading">My Profile</div>
 
     <div class="card-body">
         @include('partials.errors')
@@ -27,7 +27,7 @@
                 <textarea name="about" id="id" cols="5" rows="5" class="form-control">{{ $user->about }}</textarea>
             </div>
 
-            <button type="submit" class="btn btn-success">Update Profile</button>
+            <button type="submit" class="btn text-white float-right" id="admin_add_btn">Update Profile</button>
         </form>
     </div>
 </div>

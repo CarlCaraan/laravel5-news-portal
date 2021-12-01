@@ -40,8 +40,8 @@
                             <img class="mx-2" src="{{ asset('img/favicon.png') }}" width="50px" alt="">
                         </div>
                         <div class="col px-0">
-                            <h5 class="pt-1 m-0"><strong>STA. MARIA, LAGUNA</strong></h5>
-                            <div class="p-0 m-0" id="news_typings"></div>
+                            <h5 class="pb-0 m-0" id="brand-text"><strong>STA. MARIA, LAGUNA</strong></h5>
+                            <span class="p-0 m-0" id="news_typings"></span>
                         </div>
                     </div>
                 </a>
@@ -127,28 +127,53 @@
 
                                 <!-- Show users list for only admin users -->
                                 @if(auth()->user()->isAdmin())
-                                    <li class="list-group-item">
-                                        <a href="{{ route('users.index') }}"><i class="fas fa-users"></i> Users</a>
+                                    <li class="list-group-item" id="admin_navigation">
+                                        <a class="text-white" id="admin_links" href="{{ route('users.index') }}">
+                                            <div class="w-100">
+                                                <span>Users</span>
+                                                <img class="float-right" id="admin-icons" src="{{ asset('img/icons/users.png') }}" alt="">
+                                            </div>
+                                        </a>
                                     </li>
                                 @endif
 
-                                <li class="list-group-item">
-                                    <a href="{{ route('posts.index') }}"><i class="fas fa-newspaper"></i> Posts</a>
+                                <li class="list-group-item" id="admin_navigation">
+                                    <a class="text-white" id="admin_links" href="{{ route('posts.index') }}">
+                                        <div class="w-100">
+                                            <span>Posts</span>     
+                                            <img class="float-right" id="admin-icons" src="{{ asset('img/icons/posts.png') }}" alt="">
+                                        </div>
+                                    </a>
                                 </li>
 
-                                <li class="list-group-item">
-                                    <a href="{{ route('tags.index') }}"><i class="fas fa-tags"></i> Tags</a>
+                                <li class="list-group-item" id="admin_navigation">
+                                    <a class="text-white" id="admin_links" href="{{ route('tags.index') }}">
+                                        <div class="w-100">
+                                            <span>Tags</span>
+                                            <img class="float-right" id="admin-icons" src="{{ asset('img/icons/tags.png') }}" alt="">
+                                        </div>
+                                    </a>
                                 </li>
 
-                                <li class="list-group-item">
-                                    <a href="{{ route('categories.index') }}"><i class="fas fa-tag"></i> Categories</a>
+                                <li class="list-group-item" id="admin_navigation">
+                                    <a class="text-white" id="admin_links" id="admin-icons" href="{{ route('categories.index') }}">
+                                        <div class="w-100">
+                                            <span>Categories</span>
+                                            <img class="float-right" id="admin-icons" src="{{ asset('img/icons/category.png') }}" alt="">
+                                        </div>
+                                    </a>
                                 </li>
 
                             </ul>
 
-                            <ul class="list-group mt-5">
-                                <li class="list-group-item">
-                                    <a href="{{ route('trashed-posts.index') }}"><i class="fas fa-trash-alt"></i> Trashed Posts</a>
+                            <ul class="list-group my-3">
+                                <li class="list-group-item" id="trashed_nav">
+                                    <a class="text-white" id="admin_links" href="{{ route('trashed-posts.index') }}">
+                                        <div class="w-100">
+                                            <span>Trashed Posts</span>
+                                            <img class="float-right" id="admin-icons" src="{{ asset('img/icons/trash.png') }}" alt="">
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>

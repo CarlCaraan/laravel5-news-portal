@@ -27,7 +27,7 @@ $(document).ready(function () { //when document loads completely.
 /*========== TYPING ANIMATION ==========*/
 $(document).ready(function() {
 	 $("#news_typings").typed({
-	    strings:["<h6>ONLINE NEWS PORTAL</h6>"],
+	    strings:["<h6 style='font-size: 16px; letter-spacing: .6px;'>ONLINE NEWS PORTAL</h6>"],
 	    typespeed:0,
 	    loop:true
 	 });
