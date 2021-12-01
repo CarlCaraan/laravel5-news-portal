@@ -30,7 +30,7 @@
 
     @yield('css')
 </head>
-<body>
+<body id="app-blade-body">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top" id="login_navigation">
             <div class="container">

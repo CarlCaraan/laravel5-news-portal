@@ -169,6 +169,11 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+#app-blade-body {
+    font-family: Helvetica, sans-serif!important;
+}
+
+
 
 /*========= NAVIGATION =========*/
 #login_navigation {
