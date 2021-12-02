@@ -21,18 +21,9 @@ class PostsController extends Controller
     // View categories onclick
     public function category(Category $category) 
     {
-        // Search Function when clicking categories
-        $search = request()->query('search');
-        if($search) {
-            $posts = $category->posts()->where('title', 'LIKE', "%{$search}%")->simplePaginate(4);
-        }
-        else {
-            $posts = $category->posts()->simplePaginate(4);
-        }
-
         return view('blog.category')
         ->with('category', $category)
-        ->with('posts', $posts)
+        ->with('posts', $category->posts()->searched()->simplePaginate(4))
         ->with('categories', Category::all())
         ->with('tags', Tag::all());
     }
@@ -44,6 +35,6 @@ class PostsController extends Controller
         ->with('tag', $tag)
         ->with('categories', Category::all())
         ->with('tags', Tag::all())
-        ->with('posts', $tag->posts()->simplePaginate(4));
+        ->with('posts', $tag->posts()->searched()->simplePaginate(4));
     }
 }
