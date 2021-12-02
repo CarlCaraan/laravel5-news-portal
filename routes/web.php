@@ -42,5 +42,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('users/profile', 'UsersController@update')->name('users.update-profile');
 
     Route::get('users', 'UsersController@index')->name('users.index');
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::post('users/{user}/make-admin', 'UsersController@makeAdmin')->name('users.make-admin');
+    Route::post('users/{user}/make-writer', 'UsersController@makeWriter')->name('users.make-writer');
+    Route::post('users/{user}/make-viewer', 'UsersController@makeViewer')->name('users.make-viewer');
 });

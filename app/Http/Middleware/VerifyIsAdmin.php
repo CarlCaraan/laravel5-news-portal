@@ -17,7 +17,7 @@ class VerifyIsAdmin
     {
         //~Check if the user is admin
         if(!auth()->user()->isAdmin()) {
-            return redirect()->route('home');
+            return redirect()->route('welcome');
         }
         return $next($request);
     }

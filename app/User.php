@@ -41,6 +41,14 @@ class User extends Authenticatable
     public function isAdmin() {
         return $this->role == 'admin';
     }
+    //~Check if the user is writer
+    public function isWriter() {
+        return $this->role == 'writer';
+    }
+    //~Check if the user is viewer
+    public function isViewer() {
+        return $this->role == 'viewer';
+    }
 
     //~User has a many post
     public function posts() {

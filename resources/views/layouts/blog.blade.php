@@ -5,7 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="keywords" content=""> 
+	   <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<title>
         @yield('title')
@@ -75,7 +77,30 @@
 
 			</section>
 
-			<a class="btn btn-xs btn-rounded btn-secondary" href="{{ route('login') }}">Log In</a>
+			<div style="width:240px">
+				@guest
+				<a class="btn btn-xs btn-rounded btn-secondary" href="{{ route('login') }}">Log In</a>
+				@else
+				<div class="dropdown">
+					<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+						<span class="text-white">{{ Auth::user()->name }}</span>
+					</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<a class="dropdown-item" href="{{ route('logout') }}"
+							onclick="event.preventDefault();
+											document.getElementById('logout-form').submit();">
+							{{ __('Logout') }}
+						</a>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+							@csrf
+						</form>
+					</div>
+				</div>
+				@endguest
+			</div>
+
+
+
 
 		</div>
 	</nav><!-- /.navbar -->

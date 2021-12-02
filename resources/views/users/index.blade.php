@@ -36,16 +36,38 @@
                                 <td>
                                     {{ $user->email }}
                                 </td>
-                                <td>
-                                    <!-- Show make admin button if the user is admin -->
+                                <td class="px-0">
+                                    <!-- Show make admin button if the user not admin -->
                                     @if(!$user->isAdmin())
                                         <form action="{{ route('users.make-admin', $user->id) }}" method="POST">
                                             @csrf
-                                            <button type="submit" class="btn btn-sm text-white" style="width: 100px!important;" id="edit_restore_btn">Make Admin</button>
+                                            <button type="submit" class="btn btn-sm text-white" style="width: 115px!important;" id="edit_restore_btn">Assign as Admin</button>
+                                        </form>
+                                    @endif
+                                    <!-- Show make Writer button if the user is not writer -->
+                                    @if(!$user->isWriter() && !$user->isViewer())
+                                        <form action="{{ route('users.make-writer', $user->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm text-white" style="width: 115px!important;" id="edit_restore_btn">Assign as Writer</button>
                                         </form>
                                     @endif
                                 </td>
-                                <td></td>
+                                <td class="px-0">
+                                    <!-- Show make Writer button if the user is not writer -->
+                                    @if(!$user->isWriter() && !$user->isAdmin())
+                                        <form action="{{ route('users.make-writer', $user->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm text-white" style="width: 115px!important;" id="edit_restore_btn">Assign as Writer</button>
+                                        </form>
+                                    @endif
+                                  <!-- Show remove auth button if the user is not viewer -->
+                                    @if(!$user->isViewer())
+                                        <form action="{{ route('users.make-viewer', $user->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm text-white" style="width: 115px!important;" id="trash_delete_btn">Remove Role</button>
+                                        </form>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -49,4 +49,27 @@ class UsersController extends Controller
         //~Refresh the page
         return redirect(route('users.index'));
     }
+
+    // ~Make user admin
+    public function makeWriter(User $user) {
+        $user->role = 'writer';
+        $user->save();
+
+        //~Show Status Message
+        session()->flash('success', 'User made writer successfully.');
+        
+        //~Refresh the page
+        return redirect(route('users.index'));
+    }
+    // ~Make user admin
+    public function makeViewer(User $user) {
+        $user->role = 'viewer';
+        $user->save();
+
+        //~Show Status Message
+        session()->flash('success', 'User removed authority successfully.');
+        
+        //~Refresh the page
+        return redirect(route('users.index'));
+    }
 }

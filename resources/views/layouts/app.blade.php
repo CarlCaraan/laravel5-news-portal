@@ -70,7 +70,7 @@
                                     <a class="nav-link text-white <?php if($page == "register"){echo "active";} ?>" id="nav_login" href="{{ route('register') }}"><h5>{{ __('Register') }}</h5></a>
                                 </li>
                             @endif
-                            @else
+                        @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <span id="nav_admin">{{ Auth::user()->name }} <span class="caret"></span></span>

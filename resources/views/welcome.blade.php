@@ -37,7 +37,7 @@ Santa Maria Laguna
 									<a href="{{ route('blog.show', $post->id) }}"><img class="card-img-top" src="{{ asset('/storage/' . $post->image) }}" alt="Card image cap"></a>
 									<div class="p-6 text-center">
 										<p>
-											<a class="small-5 text-lighter text-uppercase ls-2 fw-400" href="">
+											<a class="small-5 text-lighter text-uppercase ls-2 fw-400" href="{{ route('blog.show', $post->id) }}">
 												{{ $post->category->name }}
 											</a>
 										</p>
