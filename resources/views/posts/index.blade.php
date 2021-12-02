@@ -17,7 +17,12 @@
 </div>
 
 <div class="card card-default" id="admin_card">
-    <div class="card-header text-white" id="admin_card_heading">Posts</div>
+    @if($posts->count() > 0 )
+        <div class="card-header text-white" id="admin_card_heading">Posts</div>
+    @else
+        <div class="card-header text-white" id="admin_card_heading">Empty</div>
+    @endif
+
 
     <div class="card-body">
 
