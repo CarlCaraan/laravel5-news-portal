@@ -180,6 +180,7 @@
     display: inline;
 }
 
+
 /*========= NAVIGATION =========*/
 #login_navigation {
     background-color: transparent;
@@ -502,6 +503,9 @@
     }
     #matrix_text {
         margin-left: 3rem;
+    }
+    #mobile_sidebar {
+        background-color: #303C4C;
     }
 }
 

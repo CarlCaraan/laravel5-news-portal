@@ -36,7 +36,7 @@
                                 <td>
                                     {{ $user->email }}
                                 </td>
-                                <td class="px-0">
+                                <td class="px-1">
                                     <!-- Show make admin button if the user not admin -->
                                     @if(!$user->isAdmin())
                                         <form action="{{ route('users.make-admin', $user->id) }}" method="POST">
@@ -52,7 +52,7 @@
                                         </form>
                                     @endif
                                 </td>
-                                <td class="px-0">
+                                <td class="px-1">
                                     <!-- Show make Writer button if the user is not writer -->
                                     @if(!$user->isWriter() && !$user->isAdmin())
                                         <form action="{{ route('users.make-writer', $user->id) }}" method="POST">

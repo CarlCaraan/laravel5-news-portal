@@ -64,40 +64,36 @@
 				</a>
 			</div>
 
-			<section class="navbar-mobile">
+			<section class="navbar-mobile" id="mobile_sidebar">
 				<span class="navbar-divider d-mobile-none"></span>
 
-				<ul class="nav nav-navbar">
-					<li>
-						<a class="logo-dark text-dark"href="{{ route('welcome') }}">Home</a>
-						<a class="logo-white text-white"href="{{ route('welcome') }}">Home</a>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						@guest
+						<a class="btn btn-xs btn-rounded btn-secondary" href="{{ route('login') }}">Log In</a>
+						@else
+						<div class="dropdown">
+							<a class="btn dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+								<span class="text-white">{{ Auth::user()->name }}<span class="caret"></span></span>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item text-dark" href="{{ route('logout') }}"
+									onclick="event.preventDefault();
+													document.getElementById('logout-form').submit();">
+									{{ __('Logout') }}
+								</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									@csrf
+								</form>
+							</div>
+						</div>
+						@endguest
 					</li>
-
 				</ul>
 
 			</section>
 
-			<div style="width:240px">
-				@guest
-				<a class="btn btn-xs btn-rounded btn-secondary" href="{{ route('login') }}">Log In</a>
-				@else
-				<div class="dropdown">
-					<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-						<span class="text-white">{{ Auth::user()->name }}</span>
-					</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="{{ route('logout') }}"
-							onclick="event.preventDefault();
-											document.getElementById('logout-form').submit();">
-							{{ __('Logout') }}
-						</a>
-						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-							@csrf
-						</form>
-					</div>
-				</div>
-				@endguest
-			</div>
+
 
 
 
