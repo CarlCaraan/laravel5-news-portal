@@ -50,6 +50,11 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <!-- Start Pagination -->
+                {{ $users->links() }}
+                <!-- End Pagination -->
+
             </div>
             
         @else

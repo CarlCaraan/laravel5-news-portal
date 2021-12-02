@@ -14,7 +14,7 @@ class UsersController extends Controller
 {
     //~Add view to users
     public function index() {
-        return view('users.index')->with('users', User::all());
+        return view('users.index')->with('users', User::paginate(6));
     }
 
     //~View Profile Section

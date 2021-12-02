@@ -20,7 +20,7 @@ class TagsController extends Controller
      */
     public function index()
     {
-        return view('tags.index')->with('tags', Tag::all());
+        return view('tags.index')->with('tags', Tag::paginate(6));
     }
 
     /**

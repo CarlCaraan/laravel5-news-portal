@@ -17,10 +17,10 @@ class WelcomeController extends Controller
         // Add search function
         $search = request()->query('search');
         if($search) {
-            $posts = Post::where('title', 'LIKE', "%{$search}%")->simplePaginate(1);
+            $posts = Post::where('title', 'LIKE', "%{$search}%")->simplePaginate(4);
         }
         else {
-            $posts = Post::simplePaginate(1);
+            $posts = Post::simplePaginate(4);
         }
 
 

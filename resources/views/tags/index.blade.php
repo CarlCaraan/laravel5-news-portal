@@ -61,6 +61,10 @@
             </table>
             <!-- End table -->
 
+            <!-- Start Pagination -->
+            {{ $tags->links() }}
+            <!-- End Pagination -->
+
             <!-- Start Modal -->
             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -100,11 +104,10 @@
             </div>
             <!-- End Modal -->
         @else
-            <h3 class="text-center">No Tags Yet</h3>
+            <h3 class="text-center text-white">No Tags Yet</h3>
         @endif
 
     </div> <!-- End card-body -->
-
 </div>
 <!-- End card -->
 @endsection
