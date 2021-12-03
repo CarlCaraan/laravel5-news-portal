@@ -119,7 +119,7 @@
 						<div class="matrix mt-0" id="matrix_left">
 							<img src="{{ asset('img/logo.png') }}" width="50px" alt="">
 						</div>
-						<div class="matrix pl-2 text-white" id="matrix_text">
+						<div class="matrix pl-4 text-white" id="matrix_text">
 							<h6 class="m-0" style="line-height: 13px!important;">News portal created by</h6>
 							<h6 class="m-0" style="line-height: 26px!important;">&copy 2021 M83X Systems.</h6>
 							<h6 style="line-height: 10px!important;">All Rights Reserved.</h6>
