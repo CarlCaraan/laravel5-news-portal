@@ -22,7 +22,7 @@
 	<link rel="icon" href="{{ asset('img/favicon.png') }}">
 </head>
 
-<body>
+<body id="blog_body">
 	<!-- Start of Async Drift Code -->
 	<script>
 	"use strict";
@@ -70,7 +70,7 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
 						@guest
-							<a class="btn btn-xs btn-rounded btn-secondary" href="{{ route('login') }}">Log In</a>
+							<a class="btn btn-xs btn-rounded btn-secondary" id="blog_login_btn" href="{{ route('login') }}">Log In</a>
 						@else
 							<div class="dropdown">
 								<a class="btn dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
@@ -93,11 +93,6 @@
 
 			</section>
 
-
-
-
-
-
 		</div>
 	</nav><!-- /.navbar -->
 
@@ -114,44 +109,55 @@
 		</div>
 	</section>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row gap-y align-items-center">
+	<!-- Start Footer Section -->
+	<footer>
+		<div id="home_footer">
+			<div class="container py-5">
+				<div class="row gap-y align-items-center">
 
-				<div class="col-6 col-lg-3">
-					<h6 class="logo-dark text dark">Santa Maria Laguna</h6>
-				</div>
-
-				<div class="col-6 col-lg-3 text-right order-lg-last">
-					<div class="social">
-						<a class="social-facebook" href="#"><i
-								class="fa fa-facebook"></i></a>
-						<a class="social-twitter" href="#"><i
-								class="fa fa-twitter"></i></a>
-						<a class="social-instagram" href="#"><i
-								class="fa fa-instagram"></i></a>
-						<a class="social-youtube" href="#"><i
-								class="fa fa-youtube"></i></a>
+					<div class="col-lg-4" id="matrix-container">
+						<div class="matrix mt-0" id="matrix_left">
+							<img src="{{ asset('img/logo.png') }}" width="50px" alt="">
+						</div>
+						<div class="matrix pl-2 text-white" id="matrix_text">
+							<h6 class="m-0" style="line-height: 13px!important;">News portal created by</h6>
+							<h6 class="m-0" style="line-height: 26px!important;">&copy 2021 M83X Systems.</h6>
+							<h6 style="line-height: 10px!important;">All Rights Reserved.</h6>
+						</div>
 					</div>
-				</div>
 
-				<div class="col-lg-6">
-					<div class="nav nav-bold nav-uppercase nav-trim justify-content-lg-center">
-						<a class="nav-link" href="../page/about-1.html">About</a>
-						<a class="nav-link" href="../page/contact-1.html">Contact</a>
+					<div class="col-lg-4">
 					</div>
-				</div>
 
+					<div class="col-lg-4">
+						<div class="row">
+							<div class="col-lg-7 text-white center" id="divider_footer">
+								<div id="follow_container">
+									<h6 class="text-center"><strong>FOLLOW</strong> STA. MARIA</h6>
+								</div>
+							</div>
+							<div class="col-lg-5 text-white">
+								<div id="icon_container">
+									<a class="social-facebook mr-2" href="https://www.facebook.com/MayorCindySML" target="_blank"><i class="fab fa-facebook-square" id="icon-facebook"></i></i></a>
+									<a class="social-twitter mr-2" href="#"><i class="fab fa-twitter-square" id="icon-twitter"></i></a>
+									<a class="social-instagram mr-2" href="#"><i class="fab fa-instagram-square" id="icon-instagram"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
 		</div>
-	</footer><!-- /.footer -->
+	</footer>
+	<!-- End Footer Section -->
 
 
 	<!-- Scripts -->
 	<script src="{{ asset('js/page.min.js') }}"></script>
 	<script src="{{ asset('js/script.js') }}"></script>
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61a8719102708910"></script>
+    <script src="https://kit.fontawesome.com/fbaf02a1c1.js" crossorigin="anonymous"></script>
 
 
 </body>

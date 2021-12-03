@@ -51,7 +51,7 @@
             <div class="addthis_inline_share_toolbox"></div>
 
             <div class="row">
-                <div class="gap-xy-2 mt-6">
+                <div class="gap-xy-2 mt-6 ml-3">
                     @foreach ($post->tags as $tag)
                         <a class="badge badge-pill badge-secondary" href="{{ route('blog.tag', $tag->id) }}">
                             {{ $tag->name }}
@@ -75,11 +75,21 @@
 
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-
-                <hr>
-
+                
+                @guest
+                <div class="center">
+                    <div class="w-100" id="disqus-message">
+                        <i class="fas fa-lock mx-1"></i><span>You must be logged in to post a comment</span>
+                    </div>
+                    <div class="blur-discuss">
+                        <div id="disqus_cover"></div>
+                        <div id="disqus_thread"></div><br>
+                    </div>
+                </div>
+                @else
                 <!-- Start Comment Section -->
                 <div id="disqus_thread"></div>
+                @endguest
                 <script>
                     /**
                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -99,7 +109,6 @@
                 </script>
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                 <!-- End Comment Section -->
-
                 </div>
             </div>
 

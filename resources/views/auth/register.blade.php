@@ -17,15 +17,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card py-4 login_card_container">
-                <h1 class="center login_headings mt-4" style="letter-spacing: 1.4px;">Create your account</h1>
+                <h1 class="center login_headings mt-4">Create your account</h1>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group login-padding">
-                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Name" required autofocus>
-
+                            <input id="full-name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Name" required autofocus>
                             @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('name') }}</strong>

@@ -8,9 +8,9 @@
 @endsection
 
 @section('content')
-<div class="card card-default">
-    <div class="card-header">
-        {{ isset($post) ? 'Edit Post': 'Create Post' }}
+<div class="card card-default border-0">
+    <div class="card-header text-white m-0 rounded" id="admin_card_heading">
+        {{ isset($post) ? 'Edit News': 'Create News' }}
     </div>
 
     <div class="card-body">
@@ -100,7 +100,7 @@
 
             <div class="form-group">
                 <button type="submit" class="btn text-white float-right" id="admin_add_btn">
-                    {{ isset($post) ? 'Update Post' : 'Create Post' }}
+                    {{ isset($post) ? 'Update News' : 'Create News' }}
                 </button>
             </div>
 

@@ -17,7 +17,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card py-5 login_card_container">
-                <h1 class="center login_headings mt-4">Login to your account</h1>
+                <h1 class="center login_headings mt-4" style="letter-spacing: -1.8px">Login to your account</h1>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group login-padding center">
-                            <button type="submit" class="btn form-control login_button">
+                            <button type="submit" class="btn form-control login_button font-weight-700">
                                 {{ __('Log In') }}
                             </button><br>
 
