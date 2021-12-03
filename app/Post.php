@@ -15,8 +15,10 @@ class Post extends Model
     //~Soft Delete
     use SoftDeletes;
 
-
-    //~Protect Data
+    //~Add Protect Data
+    protected $dates = [
+        'published_at'
+    ];
     protected $fillable = [
         'title', 'description', 'content', 'image', 'published_at', 'category_id', 'user_id'
     ];
@@ -56,14 +58,19 @@ class Post extends Model
     }
 
     // ~ADD SCOPES
+    // Scope for published_at post
+    public function scopePublished($query) {
+        return $query->where('published_at', '<=', now());
+    }
+    // Scope for search
    public function scopeSearched($query) {
         $search = request()->query('search');
 
         if(!$search) {
-            return $query;
+            return $query->published();
         }
         else {
-            return $query->where('title', 'LIKE', "%{$search}%");
+            return $query->published()->where('title', 'LIKE', "%{$search}%");
         }
     }
 }

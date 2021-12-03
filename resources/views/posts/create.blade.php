@@ -117,7 +117,8 @@
     <script>
         //~Flat picker JS
         flatpickr('#published_at', {
-            enableTime: true
+            enableTime: true,
+            enableSeconds: true
         })
 
         //~Select 2 JS
