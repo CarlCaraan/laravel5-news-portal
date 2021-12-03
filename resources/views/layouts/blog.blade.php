@@ -70,23 +70,23 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
 						@guest
-						<a class="btn btn-xs btn-rounded btn-secondary" href="{{ route('login') }}">Log In</a>
+							<a class="btn btn-xs btn-rounded btn-secondary" href="{{ route('login') }}">Log In</a>
 						@else
-						<div class="dropdown">
-							<a class="btn dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-								<span class="text-white">{{ Auth::user()->name }}<span class="caret"></span></span>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item text-dark" href="{{ route('logout') }}"
-									onclick="event.preventDefault();
-													document.getElementById('logout-form').submit();">
-									{{ __('Logout') }}
+							<div class="dropdown">
+								<a class="btn dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+									<span class="text-white">{{ Auth::user()->name }}<span class="caret"></span></span>
 								</a>
-								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-									@csrf
-								</form>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									<a class="dropdown-item text-dark" href="{{ route('logout') }}"
+										onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();">
+										{{ __('Logout') }}
+									</a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										@csrf
+									</form>
+								</div>
 							</div>
-						</div>
 						@endguest
 					</li>
 				</ul>
