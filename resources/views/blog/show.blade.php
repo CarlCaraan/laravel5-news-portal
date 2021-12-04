@@ -22,7 +22,7 @@
         <p><img class="avatar avatar-sm" src="{{ Gravatar::src($post->user->email) }}" alt="..."></p>
 
         <p class="opacity-70 text-uppercase small ls-1">
-            Date: {{ $post->published_at }}
+            Published at: {{ $post->published_at }}
         </p>
 
         </div>
