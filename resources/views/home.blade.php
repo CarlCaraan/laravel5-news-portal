@@ -2,8 +2,8 @@
 
 @section('background')
 <!--- Start Landing Page Image -->
-    <div class="home-inner" id="admin_background">
-    </div>
+<div class="home-inner" id="admin_background">
+</div>
 <!--- End Landing Page Image -->
 @endsection
 
@@ -16,10 +16,10 @@
 
                 <div class="card-body text-white">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif  
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
 
                     You are logged in!
                 </div>
