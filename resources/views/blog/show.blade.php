@@ -118,8 +118,5 @@
 
         </div>
     </div>
-
-
-
 </main>
 @endsection

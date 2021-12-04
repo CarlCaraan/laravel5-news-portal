@@ -73,5 +73,3 @@ Santa Maria Laguna
 	</div>
 </main>
 @endsection
-
-
