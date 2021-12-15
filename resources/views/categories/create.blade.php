@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title>Admin | Create Category</title>
+@endsection
+
 @section('background')
 <!--- Start Landing Page Image -->
     <div class="home-inner" id="admin_background">

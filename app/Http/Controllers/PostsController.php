@@ -29,7 +29,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('posts.index')->with('posts', Post::all());
+        return view('posts.index')->with('posts', Post::paginate(1));
     }
 
     /**
@@ -172,7 +172,7 @@ class PostsController extends Controller
     //~Add Trashed Method
     public function trashed()
     {
-        $trashed = Post::onlyTrashed()->get();
+        $trashed = Post::onlyTrashed()->latest()->paginate(1);
 
         return view('posts.index')->with('posts', $trashed);
     }

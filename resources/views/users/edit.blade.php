@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title>Edit | Profile</title>
+@endsection
+
 @section('background')
 <!--- Start Landing Page Image -->
     <div class="home-inner" id="admin_background">
@@ -19,7 +23,7 @@
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="name" value="{{ $user->name }}">
+                <input type="text" class="form-control text-white" name="name" id="name" value="{{ $user->name }}">
             </div>
 
             <div class="form-group">

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+<title>Admin | Posts</title>
+@endsection
+
 @section('background')
 <!--- Start Landing Page Image -->
 <div class="home-inner" id="admin_background">
@@ -80,6 +84,11 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <!-- Start Pagination -->
+            {{ $posts->links() }}
+            <!-- End Pagination -->
+
         </div>
         @else
         <h3 class="text-center text-white">No Posts Yet</h3>
