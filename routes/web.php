@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Blog\PostsController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
