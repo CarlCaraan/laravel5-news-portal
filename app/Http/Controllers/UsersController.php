@@ -44,30 +44,30 @@ class UsersController extends Controller
         $user->save();
 
         //~Show Status Message
-        session()->flash('success', 'User made admin successfully.');
+        session()->flash('success', 'Admin role successfully assigned.');
         
         //~Refresh the page
         return redirect(route('users.index'));
     }
 
-    // ~Make user admin
+    // ~Make user writer
     public function makeWriter(User $user) {
         $user->role = 'writer';
         $user->save();
 
         //~Show Status Message
-        session()->flash('success', 'User made writer successfully.');
+        session()->flash('success', 'Writer role successfully assigned.');
         
         //~Refresh the page
         return redirect(route('users.index'));
     }
-    // ~Make user admin
+    // ~Make user viewer
     public function makeViewer(User $user) {
         $user->role = 'viewer';
         $user->save();
 
         //~Show Status Message
-        session()->flash('success', 'User removed authority successfully.');
+        session()->flash('success', 'Role successfully removed.');
         
         //~Refresh the page
         return redirect(route('users.index'));
