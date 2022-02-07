@@ -59,10 +59,11 @@
                             </button><br>
 
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link text-secondary font-weight-bold mt-2" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             @endif
+                            <a class="nav-link text-white pb-0 mb-0 <?php if($page == "register"){echo "active";} ?>" id="nav_login" href="{{ route('register') }}"><h5>Not a member? Register now</h5></a>
                         </div>
                     </form>
                 </div>

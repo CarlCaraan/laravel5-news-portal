@@ -60,8 +60,10 @@
                             <button type="submit" class="btn form-control login_button">
                                 {{ __('Register') }}
                             </button>
+                            <a class="nav-link text-white mt-2 <?php if($page == "login"){echo "active";} ?>" id="nav_login" href="{{ route('login') }}"><h5>Already a member? Login</h5></a>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

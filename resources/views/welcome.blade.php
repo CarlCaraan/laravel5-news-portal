@@ -5,25 +5,21 @@ Santa Maria Laguna
 @endsection
 
 @section('header')
-<header class="header text-center text-white" style="background-image: url('{{ asset('img/background.jpg')}}');">
+<header class="header text-center text-white pb-5" style="background-image: url('{{ asset('img/background.jpg')}}');">
 	<div class="container">
-
 		<div class="row">
 			<div class="col-md-8 mx-auto">
-
-				<h1>Welcome to Municipality of Santa Maria Laguna</h1>
-				<p class="lead-2 opacity-90 mt-6">Read and get updated on news and events.</p>
-
+				<h1 class="font-weight-bold helvetica_font" id="news_heading">FEATURED FEED</h1>
+				<span class="lead-2 mt-6 helvetica_font">GET INFORMED ABOUT THE LATEST<br> UPDATES IN OUR MUNICIPALITY</span>
 			</div>
 		</div>
-
 	</div>
 </header><!-- /.header -->
 @endsection
 
 @section('content')
 <main class="main-content">
-	<div class="section bg-gray">
+	<div class="section bg-gray" id="main_content">
 		<div class="container">
 			<div class="row">
 
@@ -50,7 +46,7 @@ Santa Maria Laguna
 							</div>
 						</div>
 						@empty
-						<p class="text-center">
+						<p class="text-center text-white">
 							No results found for query <strong>{{ request()->query('search') }}</strong>
 						</p>
 						@endforelse

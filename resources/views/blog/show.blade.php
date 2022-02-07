@@ -12,16 +12,16 @@
     <div class="row h-100">
         <div class="col-lg-8 mx-auto align-self-center">
 
-        <p class="opacity-70 text-uppercase small ls-1">
+        <p class="opacity-70 text-uppercase small ls-1 helvetica_font">
             {{ $post->category->name }}
         </p>
-        <h1 class="display-4 mt-7 mb-8">{{ $post->title }}</h1>
-        <p><span class="opacity-70 mr-1">By</span> <a class="text-white" href="#">
+        <h1 class="display-4 mt-7 mb-8 helvetica_font">{{ $post->title }}</h1>
+        <p><span class="opacity-70 mr-1 helvetica_font">By</span> <a class="text-white" href="#">
             {{ $post->user->name }}
         </a></p>
-        <p><img class="avatar avatar-sm" src="{{ Gravatar::src($post->user->email) }}" alt="..."></p>
+        <p><img class="avatar avatar-sm helvetica_font" src="{{ Gravatar::src($post->user->email) }}" alt="..."></p>
 
-        <p class="opacity-70 text-uppercase small ls-1">
+        <p class="opacity-70 text-uppercase small ls-1 helvetica_font">
             Published at: {{ $post->published_at }}
         </p>
 
@@ -49,8 +49,9 @@
     !-->
     <div class="section" id="section-content">
         <div class="container">
-
-            {!! $post->content !!}
+            <span class="helvetica_font">
+                {!! $post->content !!}
+            </span>
 
             <div class="addthis_inline_share_toolbox"></div>
 

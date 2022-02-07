@@ -146,9 +146,27 @@
 
 /*# sourceMappingURL=style.css.map */
 
-/*========= ALL FONTS =========*/
+/*============= ALL FONTS =============*/
+
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap");
+
+@font-face {
+    font-family: "Lato", sans-serif;
+    src: url("assets/fonts/Lato-Regular.ttf");
+}
+@font-face {
+    font-family: "Raleway", sans-serif;
+    src: url("assets/fonts/Raleway-Regular.ttf");
+}
+@font-face {
+    font-family: "Poppins", sans-serif;
+    src: url("assets/fonts/Poppins-Regular.ttf");
+}
 
 /*========= GLOBAL CLASS =========*/
+
 .center {
     align-items: center;
     justify-content: center;
@@ -156,49 +174,77 @@
 }
 /*-- Scroll Bar -- */
 ::-webkit-scrollbar {
-  width: .5vw;
-  height: 2vh;
+    width: 0.5vw;
+    height: 2vh;
 }
 ::-webkit-scrollbar-track {
     background-color: none;
 }
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 25px;
+    background: #888;
+    border-radius: 25px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    background: #555;
 }
 #app-blade-body {
-    font-family: Helvetica, sans-serif!important;
+    font-family: Helvetica, sans-serif !important;
 }
 
+.helvetica_font {
+    font-family: Helvetica, sans-serif !important;
+}
 
 /*========= LANDING PAGE =========*/
 #user_name,
 #user_logout {
     display: inline;
 }
+#main_content {
+    background-color: #2f3b4b;
+}
+#map_container {
+    background-color: #1f2732;
+}
+#news_card_wrapper {
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+}
+#news_heading {
+    font-size: 4rem;
+}
+#landing_page_login_heading {
+    color: #66FCF1;
+    font-size: 18px;
+    background-color: #2f3b4b;
+    border: none;
+    border-radius: 100px!important;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    font-weight: 400;
+}
 
 /*========= BLOG PAGE SECTION =========*/
 .blur-discuss {
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-  background-color: #ccc;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    background-color: #ccc;
 }
 #disqus-message {
-    color: #5F5F5F;
+    color: #5f5f5f;
     font-weight: 700;
     position: absolute;
-    z-index: 1000!important;
+    z-index: 1000 !important;
     margin: 10rem auto;
 }
 #disqus_cover {
     position: absolute;
-    width:100%;
+    width: 100%;
     height: 100%;
 }
 
@@ -208,15 +254,15 @@
     box-shadow: none;
 }
 #nav_admin {
-    color: #66FCF1!important;
+    color: #66fcf1 !important;
     font-size: 1rem;
 }
 #nav_login:hover {
-    color: #66FCF1!important;
-    transition: all .3s ease-in;
+    color: #66fcf1 !important;
+    transition: all 0.3s ease-in;
 }
 .nav-link.active {
-    color: #66FCF1!important;
+    color: #66fcf1 !important;
 }
 .navbar.solid {
     background: rgba(48, 60, 76, 0.9) !important;
@@ -342,12 +388,9 @@
 /*========= FOOTER SECTION =========*/
 /*Home Page Footer*/
 #home_footer {
-    z-index: 1000!important;
-    background-color: #000!important;
+    z-index: 1000 !important;
+    background-color: #000 !important;
 }
-
-
-
 #login_footer {
     background-color: #0b0c10;
     margin-top: 5.8rem;
@@ -416,17 +459,17 @@
     background: #202833;
 }
 #admin_navigation {
-    background-color: #303C4C;
+    background-color: #303c4c;
 }
 #admin_navigation:hover {
-    background-color: #405066 ;
+    background-color: #405066;
     border-radius: 5px;
 }
 #trashed_nav {
-    background-color: #C85250;
+    background-color: #c85250;
 }
 #trashed_nav:hover {
-    background-color: #FF3633 ;
+    background-color: #ff3633;
 }
 #admin_links {
     text-decoration: none;
@@ -441,43 +484,43 @@
     width: 32px;
 }
 #admin_add_btn {
-    background-color: #46A29F!important;
+    background-color: #46a29f !important;
     font-weight: 700;
     font-size: 15px;
 }
 #admin_add_btn:hover {
-    background-color: #5DD6D2!important;
+    background-color: #5dd6d2 !important;
 }
 #admin_card {
-    background-color: #303C4C;
+    background-color: #303c4c;
 }
 #admin_card_heading {
     font-weight: 700;
     font-size: 20px;
-    background-color: #405066 ;
+    background-color: #405066;
     border-radius: 5px;
 }
 #edit_restore_btn {
-    background-color: #46A29F;
+    background-color: #46a29f;
     width: 70px;
     height: 26px;
     font-weight: 700;
 }
 #edit_restore_btn:hover {
-    background-color: #5DD6D2;
+    background-color: #5dd6d2;
 }
 #trash_delete_btn {
-    background-color: #C85250;
+    background-color: #c85250;
     width: 70px;
     height: 26px;
     font-weight: 700;
 }
 #trash_delete_btn:hover {
-    background-color: #FF3633;
+    background-color: #ff3633;
 }
 #name {
     background-color: #405065;
-    padding:1.5rem 1rem 1.5rem 1rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
     border: none;
 }
 #name::placeholder {
@@ -534,13 +577,13 @@
         margin-left: 3rem;
     }
     #mobile_sidebar {
-        background-color: #303C4C;
-        background-color: rgba(	24, 57, 100, 0.7);
+        background-color: #303c4c;
+        background-color: rgba(24, 57, 100, 0.7);
     }
-    #blog_login_btn {
+    #landing_page_login_heading {
         left: 0;
         margin-left: 1rem;
-        position: absolute; 
+        position: absolute;
     }
 }
 

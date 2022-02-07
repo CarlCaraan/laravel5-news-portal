@@ -15,8 +15,8 @@ class VerifyIsAdmin
      */
     public function handle($request, Closure $next)
     {
-        //~Check if the user is admin
-        if(!auth()->user()->isAdmin()) {
+        //~Check if the user is admin or writer
+        if((!auth()->user()->isAdmin()) && (!auth()->user()->isWriter())) {
             return redirect()->route('welcome');
         }
         return $next($request);
