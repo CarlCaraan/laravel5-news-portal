@@ -73,7 +73,7 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
 						@guest
-						<a class="btn btn-rounded btn-secondary px-3 py-0 helvetica_font" id="landing_page_login_heading" href="{{ route('login') }}">
+						<a class="btn btn-secondary px-3 py-0 helvetica_font" id="landing_page_login_heading" href="{{ route('login') }}">
 							Login <small>or</small> Register
 						</a>
 						@else
