@@ -213,6 +213,7 @@
 }
 #news_heading {
     font-size: 4rem;
+    text-shadow: .1rem .1rem .8rem black;
 }
 #landing_page_login_heading {
     color: #66FCF1;

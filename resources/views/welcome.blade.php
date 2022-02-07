@@ -29,16 +29,16 @@ Santa Maria Laguna
 
 						@forelse ($posts as $post)
 						<div class="col-md-6">
-							<div class="card border hover-shadow-6 mb-6 d-block">
+							<div class="card border hover-shadow-6 mb-6 d-block" id="news_card_wrapper">
 								<a href="{{ route('blog.show', $post->id) }}"><img class="card-img-top" src="{{ asset('/storage/' . $post->image) }}" alt="Card image cap"></a>
 								<div class="p-6 text-center">
 									<p>
-										<a class="small-5 text-lighter text-uppercase ls-2 fw-400" href="{{ route('blog.show', $post->id) }}">
+										<a class="small-5 text-lighter text-uppercase ls-2 fw-400 helvetica_font" href="{{ route('blog.show', $post->id) }}">
 											{{ $post->category->name }}<br>
 										</a>
 									</p>
 									<h5 class="mb-0">
-										<a class="text-dark" href="{{ route('blog.show', $post->id) }}">
+										<a class="text-dark helvetica_font" href="{{ route('blog.show', $post->id) }}">
 											{{ $post->title }}
 										</a>
 									</h5>
@@ -46,7 +46,7 @@ Santa Maria Laguna
 							</div>
 						</div>
 						@empty
-						<p class="text-center text-white">
+						<p class="text-center text-white helvetica_font">
 							No results found for query <strong>{{ request()->query('search') }}</strong>
 						</p>
 						@endforelse
