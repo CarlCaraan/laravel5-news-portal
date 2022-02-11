@@ -82,6 +82,12 @@
 								<span class="text-white">{{ Auth::user()->name }}<span class="caret"></span></span>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								@if ((!Auth::user()->isAdmin()) && (!Auth::user()->isWriter()))
+								@else
+								<a class="dropdown-item text-dark" href="{{ route('home') }}">
+									Admin Panel
+								</a>
+								@endif
 								<a class="dropdown-item text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
 														document.getElementById('logout-form').submit();">
 									{{ __('Logout') }}
