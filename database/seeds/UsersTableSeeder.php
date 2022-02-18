@@ -23,8 +23,8 @@ class UsersTableSeeder extends Seeder
         // ~if user is not found
         if(!$user) {
             User::create([
-                'name' => 'Carl Caraan',
-                'email' => 'bannedefused@gmail.com',
+                'name' => 'Admin Account',
+                'email' => 'admin@gmail.com',
                 'role' => 'admin',
                 'password' => Hash::make('password')
             ]);

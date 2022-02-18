@@ -20,14 +20,14 @@ class PostsTableSeeder extends Seeder
     {
         // ~Add dummy category data here
         $author1 = App\User::create([
-            'name' => 'Cindy Carolino',
-            'email' => 'cindy@gmail.com',
+            'name' => 'Writer Account',
+            'email' => 'writer@gmail.com',
             'password' => Hash::make('password')
         ]);
 
         $author2 = App\User::create([
-            'name' => 'Tony Carolino',
-            'email' => 'tony@doe.com',
+            'name' => 'User Account',
+            'email' => 'user@gmail.com',
             'password' => Hash::make('password')
         ]);
 
