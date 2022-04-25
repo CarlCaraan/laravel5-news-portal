@@ -6,8 +6,8 @@
 
 @section('background')
 <!--- Start Landing Page Image -->
-    <div class="home-inner" id="login_background">
-    </div>
+<div class="home-inner" id="login_background">
+</div>
 <!--- End Landing Page Image -->
 @endsection
 
@@ -27,9 +27,9 @@
                             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email address" required autofocus>
 
                             @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
                             @endif
                         </div>
 
@@ -37,9 +37,9 @@
                             <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" required>
 
                             @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
                             @endif
                         </div>
 
@@ -59,11 +59,15 @@
                             </button><br>
 
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link text-secondary font-weight-bold mt-2" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
+                            <a class="btn btn-link text-secondary font-weight-bold mt-2" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
                             @endif
-                            <a class="nav-link text-white pb-0 mb-0 <?php if($page == "register"){echo "active";} ?>" id="nav_login" href="{{ route('register') }}"><h5>Not a member? Register now</h5></a>
+                            <a class="nav-link text-white pb-0 mb-0 <?php if ($page == "register") {
+                                                                        echo "active";
+                                                                    } ?>" id="nav_login" href="{{ route('register') }}">
+                                <h5>Not a member? Register now</h5>
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -73,7 +77,7 @@
 </div>
 
 <!-- Start Footer Section -->
-<footer>
+<!-- <footer>
     <div id="login_footer">
         <div class="container py-5">
 			<div class="row gap-y align-items-center">
@@ -112,6 +116,6 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 <!-- End Footer Section -->
 @endsection

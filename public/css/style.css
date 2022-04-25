@@ -213,17 +213,17 @@
 }
 #news_heading {
     font-size: 4rem;
-    text-shadow: .1rem .1rem .8rem black;
+    text-shadow: 0.1rem 0.1rem 0.8rem black;
 }
 #landing_page_login_heading {
-    color: #66FCF1;
+    color: #66fcf1;
     font-size: 18px;
     background-color: #2f3b4b;
     border: none;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
     font-weight: 400;
 }
 

@@ -6,8 +6,8 @@
 
 @section('background')
 <!--- Start Landing Page Image -->
-    <div class="home-inner" id="login_background">
-    </div>
+<div class="home-inner" id="login_background">
+</div>
 <!--- End Landing Page Image -->
 @endsection
 
@@ -26,9 +26,9 @@
                         <div class="form-group login-padding">
                             <input id="full-name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Name" required autofocus>
                             @if ($errors->has('name'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
                             @endif
                         </div>
 
@@ -36,9 +36,9 @@
                             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email address" required>
 
                             @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
                             @endif
                         </div>
 
@@ -46,9 +46,9 @@
                             <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" required>
 
                             @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
                             @endif
                         </div>
 
@@ -60,7 +60,11 @@
                             <button type="submit" class="btn form-control login_button">
                                 {{ __('Register') }}
                             </button>
-                            <a class="nav-link text-white mt-2 <?php if($page == "login"){echo "active";} ?>" id="nav_login" href="{{ route('login') }}"><h5>Already a member? Login</h5></a>
+                            <a class="nav-link text-white mt-2 <?php if ($page == "login") {
+                                                                    echo "active";
+                                                                } ?>" id="nav_login" href="{{ route('login') }}">
+                                <h5>Already a member? Login</h5>
+                            </a>
                         </div>
                     </form>
 
@@ -71,7 +75,7 @@
 </div>
 
 <!-- Start Footer Section -->
-<footer>
+<!-- <footer>
     <div id="login_footer">
         <div class="container py-5">
 			<div class="row gap-y align-items-center">
@@ -110,6 +114,6 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 <!-- End Footer Section -->
 @endsection
